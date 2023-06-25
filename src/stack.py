@@ -39,11 +39,11 @@ class Stack:
         removed = self.stack.pop()
         return removed
 
-    # def top(self, *kw):
-    #     """
-    #     Метод для добавления элемента на вершину стека
-    #
-    #     :param data: данные, которые будут добавлены на вершину стека
-    #     """
-    #     return self.stack[-1]
+    def top(self):
+        """
+                Метод для возвращения верхнего элемента с вершины стека
+
+                :return: данные верхенго(последнего добавленного) элемента
+                """
+        return self.stack[-1]
 
