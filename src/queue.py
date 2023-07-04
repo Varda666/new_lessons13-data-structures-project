@@ -1,3 +1,6 @@
+
+from multiprocessing import Queue
+
 class Node:
     """Класс для узла очереди"""
 
@@ -7,15 +10,24 @@ class Node:
 
         :param data: данные, которые будут храниться в узле
         """
-        pass
+        self.data = data
+        self.next_node = next_node
+
 
 
 class Queue:
     """Класс для очереди"""
 
+
     def __init__(self):
         """Конструктор класса Queue"""
-        pass
+        self.queue = []
+
+    @property
+    def head(self):
+        return self.queue[-1]
+
+
 
     def enqueue(self, data):
         """
@@ -23,16 +35,37 @@ class Queue:
 
         :param data: данные, которые будут добавлены в очередь
         """
-        pass
+        self.queue.append(data)
+
+
+
+
+
 
     def dequeue(self):
         """
         Метод для удаления элемента из очереди. Возвращает данные удаленного элемента
 
-        :return: данные удаленного элемента
+        :return: данные удаленного элемента - не понятно какой элемет нужно удалить, последний или любой в очереди?
         """
-        pass
+
+        removed = self.queue.pop(-1)
+        return removed
+
+    def dequeue2(self, element):
+        """
+        Метод для удаления элемента из очереди. Возвращает данные удаленного элемента
+
+        :return: данные удаленного элемента - не понятно какой элемет нужно удалить, последний или любой в очереди?
+        """
+        try:
+            self.queue.remove(element)
+            return element
+        except NameError:
+            return f'Нет такого элемента в очереди'
+
+
 
     def __str__(self):
         """Магический метод для строкового представления объекта"""
-        pass
+        return f'{self.queue}\n'
