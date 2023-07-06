@@ -42,6 +42,7 @@ class Queue:
 
 
 
+
     def dequeue(self):
         """
         Метод для удаления элемента из очереди. Возвращает данные удаленного элемента
@@ -52,17 +53,17 @@ class Queue:
         removed = self.queue.pop(-1)
         return removed
 
-    def dequeue2(self, element):
-        """
-        Метод для удаления элемента из очереди. Возвращает данные удаленного элемента
-
-        :return: данные удаленного элемента - не понятно какой элемет нужно удалить, последний или любой в очереди?
-        """
-        try:
-            self.queue.remove(element)
-            return element
-        except NameError:
-            return f'Нет такого элемента в очереди'
+    # def dequeue2(self, element):
+    #     """
+    #     Метод для удаления элемента из очереди. Возвращает данные удаленного элемента
+    #
+    #     :return: данные удаленного элемента - не понятно какой элемет нужно удалить, последний или любой в очереди?
+    #     """
+    #     try:
+    #         self.queue.remove(element)
+    #         return element
+    #     except NameError:
+    #         return f'Нет такого элемента в очереди'
 
 
 

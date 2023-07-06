@@ -38,6 +38,12 @@ class TestStack(unittest.TestCase):
         self.assertEqual(s.pop(), None)
 
 
+    def test__str__(self):
+        s = Stack()
+        s.push('data1')
+        print(s)
+        assert s.__str__() == "['data1']"
+
 
 
 
