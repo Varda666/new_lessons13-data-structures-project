@@ -8,7 +8,7 @@ class TestQueue(unittest.TestCase):
             q.enqueue('first')
             q.enqueue('second')
             q.dequeue()
-            self.assertEqual(q.__str__(), "['first']\n")
+            self.assertEqual(q.__str__(), "['second']\n")
 
         def test__str__(self):
             q = Queue()

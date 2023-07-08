@@ -25,7 +25,7 @@ class Queue:
 
     @property
     def head(self):
-        return self.queue[-1]
+        return self.queue[0]
 
 
 
@@ -38,19 +38,15 @@ class Queue:
         self.queue.append(data)
 
 
-
-
-
-
-
     def dequeue(self):
         """
         Метод для удаления элемента из очереди. Возвращает данные удаленного элемента
 
         :return: данные удаленного элемента - не понятно какой элемет нужно удалить, последний или любой в очереди?
         """
-
-        removed = self.queue.pop(-1)
+        if len(self.queue) < 1:
+            return None
+        removed = self.queue.pop(0)
         return removed
 
     # def dequeue2(self, element):
